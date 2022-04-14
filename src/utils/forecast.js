@@ -9,7 +9,7 @@ const forecast = (latitude,longitude,callback)=>{
        }else if(body.error){
            callback('Unable to find your location. Try another search !', undefined)
        }else{
-           callback(undefined,body.location.name + body.current.weather_descriptions + ' The temperature is ' + body.current.temperature + '.But feels like ' + body.current.feelslike)
+           callback(undefined, body.current.weather_descriptions + ' Temperature sekarang adalah ' + body.current.temperature + ' .Terasa seperti ' + body.current.feelslike + ' dengan kelembapan ' + body.current.humidity + ' dan kecepatan angin ' + body.current.wind_speed)
        } 
     })
 }
