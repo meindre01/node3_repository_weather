@@ -9,7 +9,11 @@ const forecast = (latitude,longitude,callback)=>{
        }else if(body.error){
            callback('Unable to find your location. Try another search !', undefined)
        }else{
-           callback(undefined, body.current.weather_descriptions + ' Temperature sekarang adalah ' + body.current.temperature + 'C ,terasa seperti ' + body.current.feelslike + 'C dengan kelembapan ' + body.current.humidity + '% dan kecepatan angin ' + body.current.wind_speed + ' km/jam')
+          
+           callback(undefined,
+             body.current.weather_descriptions + ' Temperature sekarang adalah ' + body.current.temperature + ' derajat C ,terasa seperti ' + body.current.feelslike + ' derajat C dengan kelembapan ' + body.current.humidity + '% dan kecepatan angin ' + body.current.wind_speed + ' km/jam', 
+               
+             )
        } 
     })
 }
